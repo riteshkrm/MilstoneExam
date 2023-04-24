@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Move Image with Arrow Keys</title>
+	<style>
+		#image {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<img id="image" src="https://via.placeholder.com/150" alt="moving image">
+	<script>
+		// get the image element
+		const image = document.getElementById('image');
+		// set the initial position
+		let position = { x: 0, y: 0 };
+
+		// add event listener for arrow key presses
+		document.addEventListener('keydown', (event) => {
+			// check the key code
+			switch (event.keyCode) {
+				case 37: // left arrow
+					position.x -= 10;
+					break;
+				case 38: // up arrow
+					position.y -= 10;
+					break;
+				case 39: // right arrow
+					position.x += 10;
+					break;
+				case 40: // down arrow
+					position.y += 10;
+					break;
+				default:
+					return; // exit if other keys are pressed
+			}
+			// update the image position
+			image.style.left = position.x + 'px';
+			image.style.top = position.y + 'px';
+		});
+	</script>
+</body>
+</html>

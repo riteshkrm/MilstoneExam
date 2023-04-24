@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>What You'll Learn</title>
+  </head>
+  <body>
+    <h1>What You'll Learn</h1>
+    <ul id="list"></ul>
+    <button onclick="addItem()">Add Item</button>
+
+    <script>
+      const items = ["HTML", "CSS", "JavaScript", "Node.js", "React", "MongoDB"];
+      let index = 0;
+
+      function addItem() {
+        const list = document.getElementById("list");
+        if (index < items.length) {
+          const item = document.createElement("li");
+          item.textContent = items[index++];
+          list.appendChild(item);
+        } else {
+          alert("All items have been added.");
+        }
+      }
+    </script>
+  </body>
+</html>

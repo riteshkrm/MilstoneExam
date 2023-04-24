@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Highlighting words using JavaScript DOM</title>
+	<style>
+		.highlight {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<p id="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed eget dolor sed lacus lacinia malesuada. Aenean posuere tristique augue, ac egestas est gravida vel. Sed fermentum iaculis aliquet. Sed quis leo mauris. Duis eu nisi ac mi faucibus sollicitudin non non nulla. Praesent vel risus vel turpis blandit consequat. Integer a congue lacus. Fusce ultricies bibendum nunc. Vivamus aliquet purus sed nunc ultrices, at bibendum sapien molestie.</p>
+
+	<script>
+		const text = document.getElementById("text");
+		const words = text.innerHTML.split(" ");
+		for (let i = 0; i < words.length; i++) {
+			if (words[i].length > 8) {
+				words[i] = "<span class='highlight'>" + words[i] + "</span>";
+			}
+		}
+		text.innerHTML = words.join(" ");
+	</script>
+</body>
+</html>
